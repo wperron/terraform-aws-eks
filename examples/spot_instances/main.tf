@@ -61,6 +61,7 @@ module "eks" {
       name                    = "spot-1"
       override_instance_types = ["m5.large", "m5a.large", "m5d.large", "m5ad.large"]
       spot_instance_pools     = 4
+      autoscaling_enabled     = true
       asg_max_size            = 5
       asg_desired_capacity    = 5
       kubelet_extra_args      = "--node-labels=kubernetes.io/lifecycle=spot"
